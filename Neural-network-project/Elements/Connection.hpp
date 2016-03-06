@@ -2,9 +2,7 @@
 //  Connection.hpp
 //  Neural-network-project
 //
-//  Created by Alessandro Petraro on 23/02/16.
-//  Copyright © 2016 Alessandro Petraro. All rights reserved.
-//
+
 
 #ifndef Connection_hpp
 #define Connection_hpp

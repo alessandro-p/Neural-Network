@@ -2,9 +2,7 @@
 //  main.cpp
 //  Neural-network-project
 //
-//  Created by Alessandro Petraro on 23/02/16.
-//  Copyright © 2016 Alessandro Petraro. All rights reserved.
-//
+
 
 #include <iostream>
 #include <vector>
@@ -28,7 +26,6 @@
  
  It has as parameters the input values
  
- 
  2. Backpropagation phase: Secondly we have to calibrate the weights in order to train the network. So, we give the network the target values or in other words the values we know are correct so that the network can work out the error and change the weights according to that.
  
  It has as parameters the target values.
@@ -41,8 +38,9 @@
 
 int main(int argc, const char * argv[])
 {
+    /* ------ Network for MNIST DATA ------ */
     
-    std :: vector<unsigned int> topology = {784, 120, 10};
+    std :: vector<unsigned int> topology = {784, 30, 10};
     Network net(topology);
     
     MNIST_Training_module mtraining;
@@ -54,7 +52,7 @@ int main(int argc, const char * argv[])
     mtest.test_net(net, topology);
     
      
-    
+    /* --- Network for EXOR DATA ---- */
     
     /*
     std :: vector<unsigned int> topology = {2, 5, 1};
@@ -69,69 +67,6 @@ int main(int argc, const char * argv[])
      
      */
     
-
-    
-    /*
-    Training_data training_data("/Users/Alessandro/Desktop/Neural-network-project/Neural-network-project/tmp/training_data.txt");
-    
-    // We define the topology of the network //
-    std :: vector<unsigned int> topology;
-    training_data.get_topology(topology);
-    
-    //std :: shared_ptr<Network> ptr_ntwk = std :: shared_ptr<Network>(new Network(topology));
-    
-    Network net(topology);
-    
-    net.set_initial_weights_from_file(net, topology, "./exor_weight.txt");
-
-    std :: vector<double> input_vals;
-    std :: vector<double> target_vals;
-    std :: vector<double> result_vals;
-
-    int training_iteration = 0;
-    
-    std :: ofstream myfile;
-    myfile.open ("./error_file.txt");
-    
-    while(!training_data.isEOF())
-    {
-        training_iteration++;
-        std :: cout << std :: endl << "Iteration number: " << training_iteration << std :: endl;
-        
-        // get new input data and feed it forward
-        if(training_data.get_next_inputs(input_vals) != topology[0])
-        {
-            std :: cout << "Number of inputs differs from topology[0]" << std :: endl;
-            break;
-        }
-        
-        show_vector_vals(": Inputs: ", input_vals);
-        net.feed_forward(input_vals);
-        
-        // collect the net's actual results
-        net.get_results(result_vals);
-        show_vector_vals(": Outputs: ", result_vals);
-        
-        // train the net what the outputs should have been
-        training_data.get_target_outputs(target_vals);
-        show_vector_vals("Targets: ", target_vals);
-        assert(target_vals.size() == topology.back());
-        
-        //net.back_propagation(target_vals);
-        
-        double avg_error = net.get_recent_average_error();
-        std :: cout << "Network recent average error: " << avg_error << std :: endl;
-        
-        if(net.get_recent_average_error() > 0.3 && training_iteration > 9000)
-        {
-            myfile << "Iteration n: " << training_iteration << " ";
-            myfile << "avg error: " << avg_error << std :: endl;
-        }
-        
-    }
-    myfile.close();
-    */
-    //save_weights_to_file(net, topology, "./exor_weight.txt");
     std :: cout << std :: endl << "Done" << std :: endl;
     
     return 0;

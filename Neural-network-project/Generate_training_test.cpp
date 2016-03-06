@@ -3,17 +3,14 @@
 //  Neural-network-project
 //
 
-
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
 #include <fstream>
 
-
 int main()
 {
     // Random training set for XOR
-    
     std :: ofstream input_vals_file_training;
     std :: ofstream target_vals_file_training;
     
@@ -45,9 +42,6 @@ int main()
         input_vals_file_testing << n1 << ".0 " << n2 << ".0 " << std :: endl;
         
         target_vals_file_testing << t << ".0 " << std :: endl;
-        
-        //std :: cout << "in: " << n1 << ".0 " << n2 << ".0 " << std :: endl;
-        //std :: cout << "out: " << t << ".0" << std :: endl;
     }
 }
 
