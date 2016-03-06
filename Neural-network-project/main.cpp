@@ -46,8 +46,7 @@ int main(int argc, const char * argv[])
     MNIST_Training_module mtraining;
     MNIST_Testing_module mtest;
     
-    //net.set_initial_weights_from_file(net, topology, "./Weights_file/MNIST_weights_file/weights_file_30_neurons_ep_0.txt");
-    
+    /* 0 is the epoch */
     mtraining.training_network(net, topology, 0);
     mtest.test_net(net, topology);
     
@@ -58,9 +57,8 @@ int main(int argc, const char * argv[])
     std :: vector<unsigned int> topology = {2, 5, 1};
     Network net(topology);
     
-    net.set_initial_weights_from_file(net, topology, "./Weights_file/EXOR_weights-file/exor_weights_file_5_neurons_ep_0.txt");
-    //EXOR_Training_module exor_training;
-    //exor_training.training_network(net, topology, 0);
+    EXOR_Training_module exor_training;
+    exor_training.training_network(net, topology, 0);
     
     EXOR_Testing_module exor_testing;
     exor_testing.test_net(net, topology); 
