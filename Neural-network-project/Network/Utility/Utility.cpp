@@ -8,7 +8,6 @@
 
 void Utility :: show_vector_vals(std :: string label, std :: vector<double> &v)
 {
-
     std :: cout << label << " ";
     for (unsigned int i = 0; i < v.size(); i++)
     {

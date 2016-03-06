@@ -11,7 +11,6 @@
 #include <chrono>
 #include <random> 
 
-
 class Connection
 {
 public:
@@ -21,12 +20,8 @@ public:
     void set_connection_delta_weight(double x);
     void set_connection_weight(double x);
     
-
     double _weight;
     double _delta_weight;
-    
-    
-    
 };
 
 #endif /* Connection_hpp */

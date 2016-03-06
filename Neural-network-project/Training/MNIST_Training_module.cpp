@@ -136,9 +136,7 @@ void MNIST_Training_module :: training_network(Network& net, std :: vector<unsig
     sstream << "./Weights_file/MNIST_weights_file/weights_file_" << topology[1] << "_neurons_ep_" << epoch << ".txt";
     std :: string weights_file_name = sstream.str();
     
-    
     net.save_weights_to_file(net, topology, weights_file_name);
-    
 }
 
 

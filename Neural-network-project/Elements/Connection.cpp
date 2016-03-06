@@ -8,18 +8,7 @@
 
 Connection :: Connection()
 {
-    /* construct a trivial random generator engine from a time-based seed:
-    unsigned int seed = (unsigned int)std::chrono::system_clock::now().time_since_epoch().count();
-    std::default_random_engine generator (seed);
-    
-    std::normal_distribution<double> distribution (0.0,1.0);
-     
-    
-    _weight = distribution(generator);
-    */
-    
-    _weight = rand() / (double) (RAND_MAX); 
-    ;
+    _weight = rand() / (double) (RAND_MAX);
 }
 
 double Connection :: get_connection_weight(void)

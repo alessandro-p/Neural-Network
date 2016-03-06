@@ -20,15 +20,13 @@ class Neuron
 public:
     Neuron(unsigned int num_outputs, unsigned int _my_index);
     void feed_forward(const Layer &prev_layer);
-    void set_output_value(double val);
-    double get_output_value(void) const;
     void calc_output_gradients(double target_val);
     void calc_hidden_gradients(const Layer &next_layer);
     void update_input_weights(Layer &prev_layer);
     
+    double get_output_value(void) const;
+    void set_output_value(double val);
     std :: vector<Connection>&  output_weights();
-    
-    
     
 private:
     static double eta; // [0...1]

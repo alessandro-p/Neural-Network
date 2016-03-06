@@ -3,7 +3,6 @@
 //  Neural-network-project
 //
 
-
 #include "EXOR_Testing_module.hpp"
 
 EXOR_Testing_module :: EXOR_Testing_module()
@@ -112,7 +111,3 @@ void EXOR_Testing_module :: test_net(Network& net, std :: vector<unsigned int> t
     
     std :: cout << "Correct: " << correct << " Out of: " << input_vals_size << std :: endl;
 }
-
-
-
-

@@ -3,7 +3,6 @@
 //  Neural-network-project
 //
 
-
 #ifndef MNIST_Testing_module_hpp
 #define MNIST_Testing_module_hpp
 

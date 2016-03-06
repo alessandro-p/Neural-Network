@@ -3,7 +3,6 @@
 //  Neural-network-project
 //
 
-
 #include "EXOR_Training_module.hpp"
 
 EXOR_Training_module :: EXOR_Training_module()

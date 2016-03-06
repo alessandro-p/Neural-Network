@@ -44,4 +44,3 @@ int main()
         target_vals_file_testing << t << ".0 " << std :: endl;
     }
 }
-

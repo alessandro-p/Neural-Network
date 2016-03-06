@@ -29,8 +29,6 @@ Network :: Network(const std :: vector<unsigned int> &topology)
     }
 }
 
-
-
 void Network :: feed_forward(const std :: vector<double> &input_vals)
 {
     // To make the feedforward possible the number of inputs must be the same as
@@ -57,7 +55,6 @@ void Network :: feed_forward(const std :: vector<double> &input_vals)
     }
 }
 
-
 /* 
  * Given the target values (our desired outputs) it calculates the error and try to
  * calibrate the weights according to that
@@ -79,11 +76,9 @@ void Network :: back_propagation(const std :: vector<double> &target_vals)
     _error /= output_layer.size() -1;  // get the average error squared
     _error = sqrt(_error);  // RMS
     
-    
     // recent average measure
     _recent_average_error = (_recent_average_error * _recent_average_smoothing_factor + _error)
                                 / (_recent_average_smoothing_factor + 1.0);
-    
     
     // Calculate gradients on output layer  (not including the bias)
     for(unsigned int n = 0; n < output_layer.size()-1; n++)
@@ -122,27 +117,15 @@ void Network :: back_propagation(const std :: vector<double> &target_vals)
 void Network :: get_results(std :: vector<double> &result_vals) const
 {
     result_vals.clear();
-    
     for(unsigned n=0; n < _layers.back().size()-1; ++n )
     {
         result_vals.push_back(_layers.back()[n].get_output_value());
     }
 }
 
-
-
-double Network :: get_recent_average_error(void)
-{
-    return _recent_average_error; 
-}
-
-
-
-std :: vector<Layer>& Network  :: layers()
-{
-    return _layers;
-}
-
+/* 
+ * UTILITY METHODS -> Load networks weight from file, Save networks weights to file
+ */
 void Network :: set_initial_weights_from_file(Network& net, std :: vector<unsigned int> topology, std :: string file_name)
 {
     
@@ -177,7 +160,6 @@ void Network :: set_initial_weights_from_file(Network& net, std :: vector<unsign
     weight_file.close();
 }
 
-
 void Network :: save_weights_to_file(Network& net, std :: vector<unsigned int> topology, std :: string file_name)
 {
     std :: ofstream weight_file;
@@ -205,13 +187,14 @@ void Network :: save_weights_to_file(Network& net, std :: vector<unsigned int> t
     return;
 }
 
+/* GETTERS */
+double Network :: get_recent_average_error(void)
+{
+    return _recent_average_error; 
+}
 
-
-
-
-
-
-
-
-
+std :: vector<Layer>& Network  :: layers()
+{
+    return _layers;
+}
 

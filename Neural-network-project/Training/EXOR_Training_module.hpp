@@ -3,7 +3,6 @@
 //  Neural-network-project
 //
 
-
 #ifndef EXOR_Training_module_hpp
 #define EXOR_Training_module_hpp
 
@@ -24,8 +23,6 @@ public:
     EXOR_Training_module(const std :: string input_vals_file, const std :: string target_vals_file);
     
     void training_network(Network& net, std :: vector<unsigned int> topology, int epoch);
-    
-    
     
 private:
     void populate_input_vals(std :: string file_name);

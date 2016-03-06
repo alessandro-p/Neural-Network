@@ -3,13 +3,8 @@
 //  Neural-network-project
 //
 
-
 #ifndef EXOR_Testing_module_hpp
 #define EXOR_Testing_module_hpp
-
-#include <stdio.h>
-
-#include <stdio.h>
 
 #include <stdio.h>
 #include <fstream>
@@ -35,6 +30,5 @@ private:
     int evaluate(std :: vector<double> outputs, double target);
     
 };
-
 
 #endif /* EXOR_Testing_module_hpp */

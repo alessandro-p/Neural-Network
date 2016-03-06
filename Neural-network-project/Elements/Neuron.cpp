@@ -3,7 +3,6 @@
 //  Neural-network-project
 //
 
-
 #include "Neuron.hpp"
 
 /* ------------ CONSTANT VALUES --------------------- */
@@ -28,46 +27,6 @@ Neuron :: Neuron(unsigned int num_outputs, unsigned int my_index)
     }
     _my_index = my_index;
 }
-
-/* --------  GETTERS AND SETTERS --------  */
-
-void Neuron :: set_output_value(double val)
-{
-    _output_value = val;
-}
-
-double Neuron :: get_output_value(void) const
-{
-    return _output_value;
-}
-
-/* -------- END GETTERS AND SETTERS -------- */
-
-/*  ---------- ACTIVATION FUNCTIONS AND THEIR DERIVATIVES ------------- */
-
-/* It can be somewhat function, I'll use sigmoid function */
-double Neuron :: transfer_function(double x)
-{
-    return 1.0 / (1.0 + exp(-x));
-    
-    //return tanh(x);
-}
-
-double Neuron :: transfer_function_derivative(double x)
-{
-    /* Use this when the transfer function is the sigmoid */
-    return transfer_function(x) * (1 - transfer_function(x));
-    
-    /* 
-     Choose between one of the following when the transfer function is the tangent
-     */
-    
-    // return 1 - tanh(x) * tanh(x);
-    //return 1 -x*x;
-}
-
-/*  ---------------------- END ------------------------------ */
-
 
 /* Given the previous layer, it works out the output_value for the neuron */
 void Neuron :: feed_forward(const Layer &prev_layer)
@@ -112,7 +71,6 @@ double Neuron :: sumDOW(const Layer &next_layer) const
         Connection tmp_conn = _output_weights[n];
         sum += tmp_conn.get_connection_weight() * next_layer[n]._gradient;
     }
-    
     return sum;
 }
 
@@ -123,7 +81,6 @@ void Neuron :: calc_hidden_gradients(const Layer &next_layer)
     double dow = sumDOW(next_layer);
     _gradient = dow * Neuron :: transfer_function_derivative(_output_value);
 }
-
 
 void Neuron :: update_input_weights(Layer &prev_layer)
 {
@@ -150,15 +107,45 @@ void Neuron :: update_input_weights(Layer &prev_layer)
     
 }
 
+/* --------  GETTERS AND SETTERS --------  */
+
+double Neuron :: get_output_value(void) const
+{
+    return _output_value;
+}
+
+void Neuron :: set_output_value(double val)
+{
+    _output_value = val;
+}
+
 std :: vector<Connection>&  Neuron :: output_weights()
 {
-    
     return _output_weights;
 }
 
+/*  ---------- ACTIVATION FUNCTIONS AND THEIR DERIVATIVES ------------- */
 
+/* It can be somewhat function, I'll use sigmoid function */
+double Neuron :: transfer_function(double x)
+{
+    return 1.0 / (1.0 + exp(-x));
+    
+    //return tanh(x);
+}
 
-
+double Neuron :: transfer_function_derivative(double x)
+{
+    /* Use this when the transfer function is the sigmoid */
+    return transfer_function(x) * (1 - transfer_function(x));
+    
+    /*
+     Choose between one of the following when the transfer function is the tangent
+     */
+    
+    // return 1 - tanh(x) * tanh(x);
+    //return 1 -x*x;
+}
 
 
 

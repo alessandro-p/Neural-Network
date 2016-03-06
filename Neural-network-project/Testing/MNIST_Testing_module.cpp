@@ -3,9 +3,7 @@
 //  Neural-network-project
 //
 
-
 #include "MNIST_Testing_module.hpp"
-
 
 MNIST_Testing_module :: MNIST_Testing_module()
 {
@@ -153,5 +151,3 @@ int MNIST_Testing_module :: evaluate(std :: vector<double> outputs, double targe
     }
     return 0;
 }
-
-
