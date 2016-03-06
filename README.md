@@ -27,4 +27,14 @@ Changing between different transfer functions will influence the network perform
 
 I suggest using the sigmoid function for the MNIST data, while the tangent function for the EXOR data.
 
+## Main.cpp and Generate_training_test.cpp
+
+Generate_training_test.cpp is the file I used to generate the EXOR data file. I added it for completeness. 
+
+In main.cpp I left commented the part concerning the EXOR_Training, less interesting, while I left an uncommented example 
+where I train the network with the MNIST Data. 
+
+
+
+
 
