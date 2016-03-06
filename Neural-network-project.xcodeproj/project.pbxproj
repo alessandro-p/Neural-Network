@@ -23,13 +23,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D21B68EE1C8A20FB00BC9531 /* MNIST_Training_module.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MNIST_Training_module.cpp; path = Training/MNIST_Training_module.cpp; sourceTree = "<group>"; };
+		D21B68EF1C8A20FB00BC9531 /* MNIST_Training_module.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = MNIST_Training_module.hpp; path = Training/MNIST_Training_module.hpp; sourceTree = "<group>"; };
+		D21B68F11C8A212900BC9531 /* MNIST_Testing_module.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MNIST_Testing_module.cpp; path = Testing/MNIST_Testing_module.cpp; sourceTree = "<group>"; };
+		D21B68F21C8A212900BC9531 /* MNIST_Testing_module.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = MNIST_Testing_module.hpp; path = Testing/MNIST_Testing_module.hpp; sourceTree = "<group>"; };
 		D21EFDBB1C89A7B500D0CC4A /* Utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Utility.cpp; path = Network/Utility/Utility.cpp; sourceTree = "<group>"; };
 		D21EFDBC1C89A7B500D0CC4A /* Utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Utility.hpp; path = Network/Utility/Utility.hpp; sourceTree = "<group>"; };
 		D29DBB131C833EC9003A832C /* Generate_training_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Generate_training_test.cpp; sourceTree = "<group>"; };
-		D29DBB181C8362BC003A832C /* Training_data.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Training_data.cpp; path = Training/Training_data.cpp; sourceTree = "<group>"; };
-		D29DBB191C8362BC003A832C /* Training_data.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Training_data.hpp; path = Training/Training_data.hpp; sourceTree = "<group>"; };
-		D2C644581C84402A003A2115 /* MNIST_Loader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MNIST_Loader.cpp; path = Training/MNIST_Loader.cpp; sourceTree = "<group>"; };
-		D2C644591C84402A003A2115 /* MNIST_Loader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = MNIST_Loader.hpp; path = Training/MNIST_Loader.hpp; sourceTree = "<group>"; };
+		D2A956C91C8B360000005EAA /* EXOR_Training_module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EXOR_Training_module.cpp; path = Training/EXOR_Training_module.cpp; sourceTree = "<group>"; };
+		D2A956CA1C8B360000005EAA /* EXOR_Training_module.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = EXOR_Training_module.hpp; path = Training/EXOR_Training_module.hpp; sourceTree = "<group>"; };
+		D2A956CC1C8B3CC700005EAA /* EXOR_Testing_module.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = EXOR_Testing_module.cpp; path = Testing/EXOR_Testing_module.cpp; sourceTree = "<group>"; };
+		D2A956CD1C8B3CC700005EAA /* EXOR_Testing_module.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = EXOR_Testing_module.hpp; path = Testing/EXOR_Testing_module.hpp; sourceTree = "<group>"; };
 		D2D3E32A1C7C9EEB00BFFB0D /* Neural-network-project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Neural-network-project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D3E32D1C7C9EEB00BFFB0D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D2D3E3341C7C9F7300BFFB0D /* Network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Network.cpp; path = Network/Network.cpp; sourceTree = "<group>"; };
@@ -51,6 +55,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D21B68F01C8A210800BC9531 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				D21B68F21C8A212900BC9531 /* MNIST_Testing_module.hpp */,
+				D21B68F11C8A212900BC9531 /* MNIST_Testing_module.cpp */,
+				D2A956CD1C8B3CC700005EAA /* EXOR_Testing_module.hpp */,
+				D2A956CC1C8B3CC700005EAA /* EXOR_Testing_module.cpp */,
+			);
+			name = Testing;
+			sourceTree = "<group>";
+		};
 		D21EFDBA1C89A78E00D0CC4A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +78,10 @@
 		D29DBB171C83627D003A832C /* Training */ = {
 			isa = PBXGroup;
 			children = (
-				D29DBB191C8362BC003A832C /* Training_data.hpp */,
-				D29DBB181C8362BC003A832C /* Training_data.cpp */,
-				D2C644591C84402A003A2115 /* MNIST_Loader.hpp */,
-				D2C644581C84402A003A2115 /* MNIST_Loader.cpp */,
+				D21B68EF1C8A20FB00BC9531 /* MNIST_Training_module.hpp */,
+				D21B68EE1C8A20FB00BC9531 /* MNIST_Training_module.cpp */,
+				D2A956CA1C8B360000005EAA /* EXOR_Training_module.hpp */,
+				D2A956C91C8B360000005EAA /* EXOR_Training_module.cpp */,
 			);
 			name = Training;
 			sourceTree = "<group>";
@@ -105,6 +120,7 @@
 				D21EFDBA1C89A78E00D0CC4A /* Utility */,
 				D2D3E3391C7C9F9D00BFFB0D /* Elements */,
 				D29DBB171C83627D003A832C /* Training */,
+				D21B68F01C8A210800BC9531 /* Testing */,
 			);
 			name = Network;
 			sourceTree = "<group>";

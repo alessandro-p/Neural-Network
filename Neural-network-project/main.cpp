@@ -14,9 +14,13 @@
 #include "Network/Network.cpp"
 #include "Elements/Neuron.cpp"
 #include "Elements/Connection.cpp"
-#include "Training/Training_data.cpp"
-#include "Training/MNIST_Loader.cpp"
 #include "Network/Utility/Utility.cpp"
+
+#include "Training/MNIST_Training_module.cpp"
+#include "Testing/MNIST_Testing_module.cpp"
+
+#include "Training/EXOR_Training_module.cpp"
+#include "Testing/EXOR_Testing_module.cpp"
 
 /* We have 3 distinct phases
  
@@ -37,30 +41,35 @@
 
 int main(int argc, const char * argv[])
 {
-    std :: vector<unsigned int> topology = {784, 30, 10};
+    
+    std :: vector<unsigned int> topology = {784, 120, 10};
     Network net(topology);
     
-    net.set_initial_weights_from_file(net, topology, "./weights_file_30_neurons_ep_1.txt");
+    MNIST_Training_module mtraining;
+    MNIST_Testing_module mtest;
     
-    //MNIST_Loader mn_train(true);
-    //mn_train.training_network(net, topology, 2);
+    //net.set_initial_weights_from_file(net, topology, "./Weights_file/MNIST_weights_file/weights_file_30_neurons_ep_0.txt");
     
-    //MNIST_Loader mn_train(true);
-    //for (int epoch = 0; epoch < 2; epoch++)
-    //   mn_train.training_network(net, topology, epoch);
+    mtraining.training_network(net, topology, 0);
+    mtest.test_net(net, topology);
     
-    
-    MNIST_Loader mn_test(false);
-    mn_test.test_net(net, topology);
+     
     
     
+    /*
+    std :: vector<unsigned int> topology = {2, 5, 1};
+    Network net(topology);
     
+    net.set_initial_weights_from_file(net, topology, "./Weights_file/EXOR_weights-file/exor_weights_file_5_neurons_ep_0.txt");
+    //EXOR_Training_module exor_training;
+    //exor_training.training_network(net, topology, 0);
     
+    EXOR_Testing_module exor_testing;
+    exor_testing.test_net(net, topology); 
+     
+     */
     
-    
-    
-    //set_initial_weights_from_file(net,topology, weights_file_name);
-    //test_net(net, topology);
+
     
     /*
     Training_data training_data("/Users/Alessandro/Desktop/Neural-network-project/Neural-network-project/tmp/training_data.txt");
@@ -73,7 +82,7 @@ int main(int argc, const char * argv[])
     
     Network net(topology);
     
-    net = set_initial_weights_from_file(net, topology, "./exor_weight.txt");
+    net.set_initial_weights_from_file(net, topology, "./exor_weight.txt");
 
     std :: vector<double> input_vals;
     std :: vector<double> target_vals;
