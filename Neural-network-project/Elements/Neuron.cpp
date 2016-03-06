@@ -49,14 +49,20 @@ double Neuron :: get_output_value(void) const
 double Neuron :: transfer_function(double x)
 {
     return 1.0 / (1.0 + exp(-x));
+    
     //return tanh(x);
 }
 
 double Neuron :: transfer_function_derivative(double x)
 {
+    /* Use this when the transfer function is the sigmoid */
     return transfer_function(x) * (1 - transfer_function(x));
-    // return 1 - tanh(x) * tanh(x);
     
+    /* 
+     Choose between one of the following when the transfer function is the tangent
+     */
+    
+    // return 1 - tanh(x) * tanh(x);
     //return 1 -x*x;
 }
 
