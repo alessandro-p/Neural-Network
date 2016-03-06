@@ -69,8 +69,8 @@
 		D21EFDBA1C89A78E00D0CC4A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				D21EFDBB1C89A7B500D0CC4A /* Utility.cpp */,
 				D21EFDBC1C89A7B500D0CC4A /* Utility.hpp */,
+				D21EFDBB1C89A7B500D0CC4A /* Utility.cpp */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
