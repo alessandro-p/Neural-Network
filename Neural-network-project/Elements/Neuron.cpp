@@ -146,17 +146,3 @@ double Neuron :: transfer_function_derivative(double x)
     // return 1 - tanh(x) * tanh(x);
     //return 1 -x*x;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

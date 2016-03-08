@@ -9,7 +9,6 @@
 Network :: Network(const std :: vector<unsigned int> &topology)
 {
     unsigned int num_layers = (unsigned int) topology.size();
-    
     for(unsigned int layer_num = 0; layer_num < num_layers; ++layer_num)
     {
         _layers.push_back(Layer());
@@ -21,7 +20,6 @@ Network :: Network(const std :: vector<unsigned int> &topology)
         for(unsigned int neuron_num = 0; neuron_num <= topology[layer_num]; ++neuron_num)
         {
             _layers.back().push_back(Neuron(num_outputs,neuron_num));
-            std :: cout << "new Neuron made!" << std::endl;
         }
         
         // Force the bias node's output to be 1.0 -- The last neuron created above
@@ -34,7 +32,6 @@ void Network :: feed_forward(const std :: vector<double> &input_vals)
     // To make the feedforward possible the number of inputs must be the same as
     // the number of neurons in the first level (excluded the bias)
     assert(input_vals.size() == _layers[0].size() -1);
-    
     
     // For the input layer: output = input (they are like latches)
     for(unsigned int i = 0; i<input_vals.size(); i++)
